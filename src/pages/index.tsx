@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 
 import Tabs from "@/components/Tabs";
+import SearchBar from "@/components/SearchBar";
 
 const Home: NextPage = () => {
     const roles: Role[] = [
@@ -27,13 +28,12 @@ const Home: NextPage = () => {
             </Head>
 
             <header className="px-8 pt-8 pb-6 lg:py-10">
-                <h1 className="text-3xl font-bold tracking-wide">
-                    使用者列表
-                </h1>
+                <h1 className="text-3xl font-bold tracking-wide">使用者列表</h1>
             </header>
 
             <main className="px-8">
                 <Tabs roles={roles} />
+                <SearchBar />
             </main>
         </>
     );
