@@ -14,7 +14,7 @@ export default function Tabs({ roles }: TabsProps) {
     const tabs = roles.map(({ value, name }, index) => (
         <Tab
             key={value}
-            ref={(element: HTMLDivElement) =>(tabsRef.current[index] = element)}
+            ref={(element: HTMLDivElement) => tabsRef.current[index] = element}
             isActive={index === activeTabIndex}
             onClick={() => setActiveTabIndex(index)}
         >
@@ -39,7 +39,7 @@ export default function Tabs({ roles }: TabsProps) {
         <div className="relative">
             <div className="flex border-b-2 border-gray-300">{tabs}</div>
             <span
-                className="absolute bottom-0 block h-0.5 bg-sky-400 rounded-full transition-all duration-300"
+                className="absolute bottom-0 block h-0.5 rounded-full bg-sky-400 transition-all duration-300"
                 style={{ left: activeTabLeft, width: activeTabWidth }}
             ></span>
         </div>
@@ -58,7 +58,7 @@ const Tab = forwardRef<TabRef, TabProps>(
     ({ children, isActive, onClick }, ref) => (
         <div
             ref={ref}
-            className={`px-4 py-1 lg:py-2 text-lg font-medium tracking-wide ${
+            className={`px-4 py-1 text-lg font-medium tracking-wide lg:py-2 ${
                 isActive ? "text-sky-400" : "text-gray-300"
             } cursor-pointer`}
             onClick={onClick}

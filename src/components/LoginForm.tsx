@@ -2,12 +2,12 @@ import * as React from "react";
 
 export default function LoginForm() {
     return (
-        <form method="post" className="w-1/5 min-w-[300px] mx-auto">
+        <form method="post" className="mx-auto w-1/5 min-w-[300px]">
             <Input id="email" filedName="電子郵件地址" />
             <Input id="password" filedName="密碼" />
             <button
                 type="submit"
-                className="w-full bg-sky-400 text-white font-medium py-2 rounded my-4 tracking-wide"
+                className="my-4 w-full rounded bg-sky-400 py-2 font-medium tracking-wide text-white"
             >
                 登入
             </button>
@@ -22,15 +22,15 @@ interface InputProps {
 
 const Input = ({ id, filedName }: InputProps) => {
     return (
-        <div className="flex flex-col-reverse my-2">
+        <div className="my-2 flex flex-col-reverse">
             <input
                 id={id}
                 type="text"
-                className="peer w-full px-3 py-2 focus:border-sky-400 transition-all duration-300 text-lg border-2 border-gray-300 rounded outline-none"
+                className="peer w-full rounded border-2 border-gray-300 px-3 py-2 text-lg outline-none transition-all duration-300 focus:border-sky-400"
             />
             <label
                 htmlFor={id}
-                className="my-1 peer-focus:text-sky-400 text-gray-400 tracking-wide transition-all duration-300"
+                className="my-1 tracking-wide text-gray-400 transition-all duration-300 peer-focus:text-sky-400"
             >
                 {filedName}
             </label>

@@ -27,10 +27,11 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-
-            <header className="flex justify-between items-center px-8 pt-8 pb-6 lg:py-10">
+            <header className="flex items-center justify-between px-8 pt-8 pb-6 lg:py-10">
                 <h1 className="text-3xl font-bold tracking-wide">使用者列表</h1>
-                <button className="py-1 px-4 rounded border-2 border-sky-400 text-sky-400 font-medium hover:bg-sky-400 transition-all duration-300 hover:text-white">登出</button>
+                <button className="rounded border-2 border-sky-400 py-1 px-4 font-medium text-sky-400 transition-all duration-300 hover:bg-sky-400 hover:text-white">
+                    登出
+                </button>
             </header>
 
             <main className="px-8">
