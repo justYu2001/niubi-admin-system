@@ -3,6 +3,7 @@ import Head from "next/head";
 
 import Tabs from "@/components/Tabs";
 import SearchBar from "@/components/SearchBar";
+import AddUserButton from "@/components/AddUserButton";
 
 const Home: NextPage = () => {
     const roles: Role[] = [
@@ -36,7 +37,10 @@ const Home: NextPage = () => {
 
             <main className="px-8">
                 <Tabs roles={roles} />
-                <SearchBar />
+                <div className="flex items-center">
+                    <SearchBar />
+                    <AddUserButton />
+                </div>
             </main>
         </>
     );
