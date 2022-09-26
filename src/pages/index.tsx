@@ -1,11 +1,18 @@
+import { useState } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 
 import Tabs from "@/components/Tabs";
 import SearchBar from "@/components/SearchBar";
 import AddUserButton from "@/components/AddUserButton";
+import AddUserModal from "@/components/AddUserModal";
 
 const Home: NextPage = () => {
+    const [isAddUserModalOpen, setIsAddUserModalOpen] = useState(false);
+
+    const openAddUserModal = () => setIsAddUserModalOpen(true);
+    const closeAddUserModal = () => setIsAddUserModalOpen(false);
+
     const roles: Role[] = [
         {
             name: "全部",
@@ -39,9 +46,14 @@ const Home: NextPage = () => {
                 <Tabs roles={roles} />
                 <div className="flex items-center">
                     <SearchBar />
-                    <AddUserButton />
+                    <AddUserButton onClick={openAddUserModal} />
                 </div>
             </main>
+
+            <AddUserModal
+                open={isAddUserModalOpen}
+                onClose={closeAddUserModal}
+            />
         </>
     );
 };
