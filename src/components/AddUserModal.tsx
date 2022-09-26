@@ -33,7 +33,7 @@ export default function AddUserModal({ open, onClose }: AddUserModalProps) {
                         leaveFrom="opacity-100 top-32 md:top-auto md:scale-100"
                         leaveTo="opacity-0 top-full md:top-auto md:scale-95"
                     >
-                        <Dialog.Panel className="absolute left-0 right-0 bottom-0 rounded-t-[36px] bg-white md:left-auto md:right-auto md:bottom-auto md:h-3/5 md:w-3/5 md:rounded-2xl">
+                        <Dialog.Panel className="absolute left-0 right-0 bottom-0 rounded-t-[36px] bg-white md:left-auto md:right-auto md:bottom-auto md:w-3/5 md:rounded-2xl">
                             <Dialog.Title
                                 as="div"
                                 className="flex flex-col md:flex-row-reverse md:justify-between"
@@ -66,7 +66,7 @@ export default function AddUserModal({ open, onClose }: AddUserModalProps) {
                                 <Input id="address" filedName="地址" />
                                 <button
                                     type="submit"
-                                    className="mt-8 w-full rounded bg-sky-400 py-4 text-lg font-medium tracking-wide text-white md:float-right md:w-auto md:py-2 md:px-6 md:text-sm md:font-normal"
+                                    className="my-8 w-full rounded bg-sky-400 py-4 text-lg font-medium tracking-wide text-white md:float-right md:w-auto md:py-2 md:px-6 md:text-sm md:font-normal"
                                 >
                                     新增
                                 </button>
