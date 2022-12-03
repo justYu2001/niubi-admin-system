@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@headlessui/react': ^1.7.2
+  '@tanstack/react-query': ^4.19.0
   '@types/node': 18.0.0
   '@types/node-rsa': ^1.1.1
   '@types/react': 18.0.14
@@ -29,6 +30,7 @@ specifiers:
 
 dependencies:
   '@headlessui/react': 1.7.2_biqbaboplfbrettd7655fr4n2y
+  '@tanstack/react-query': 4.19.0_biqbaboplfbrettd7655fr4n2y
   '@types/node-rsa': 1.1.1
   axios: 1.2.0
   jsencrypt: 3.3.1
@@ -279,6 +281,28 @@ packages:
     resolution: {integrity: sha512-6JrF+fdUK2zbGpJIlN7G3v966PQjyx/dPt1T9km2wj+EUBqgrxCk3uX4Kct16MIm9gGxfKRcfax2hVf5jvlTzA==}
     dependencies:
       tslib: 2.4.0
+    dev: false
+
+  /@tanstack/query-core/4.19.0:
+    resolution: {integrity: sha512-q+4GvS05nG2UXDE4ng0NU5SQNhT+VqhRTLNVtgVw1tIKJfG3CyYQpP/JwAdzMB7NEqC8L5oo9NAaORxEQN53dg==}
+    dev: false
+
+  /@tanstack/react-query/4.19.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-gP4kmfQ3BvCYxTxA/3Xf0P24iNgW539Thk89KzP7X+i+EvFiWhEUMl1NtuI87bFrVEBHs+1ColFNimDidBh/Ww==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      '@tanstack/query-core': 4.19.0
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      use-sync-external-store: 1.2.0_react@18.2.0
     dev: false
 
   /@types/json-schema/7.0.11:
