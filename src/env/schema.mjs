@@ -9,7 +9,6 @@ export const serverSchema = z.object({
     NODE_ENV: z.enum(["development", "test", "production"]),
     API_URL: z.string().url(),
     NEXTAUTH_SECRET: z.string(),
-    NEXTAUTH_URL: z.string().url(),
     PRIVATE_KEY: z.string(),
 });
 

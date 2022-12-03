@@ -96,7 +96,7 @@ type SignInAPIResponseData = User | null;
 type SignInAPIResponse = {
     success: boolean;
     user: SignInAPIResponseData;
-}
+};
 
 interface FetchSignInAPIFunction {
     (data: SignInAPIRequestBody): Promise<SignInAPIResponse>;
@@ -106,9 +106,9 @@ const fetchSignInAPI: FetchSignInAPIFunction = async (data) => {
     /*
      * Using the validateStatus config option, we can define HTTP code(s) that should not throw an error.
      * Documentation Link: https://axios-http.com/docs/handling_errors
-     * 
+     *
      * Since we need to handle 400 Bad Request errors ourselves, for the client-side error message.
-     * We set validStatus to ensure that status codes under 500 will not be Promise.reject() by Axios, 
+     * We set validStatus to ensure that status codes under 500 will not be Promise.reject() by Axios,
      * so that we can throw the custom error message.
      */
 
