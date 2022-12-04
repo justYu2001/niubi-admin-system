@@ -31,7 +31,6 @@ specifiers:
 dependencies:
   '@headlessui/react': 1.7.2_biqbaboplfbrettd7655fr4n2y
   '@tanstack/react-query': 4.19.0_biqbaboplfbrettd7655fr4n2y
-  '@types/node-rsa': 1.1.1
   axios: 1.2.0
   jsencrypt: 3.3.1
   next: 12.2.5_biqbaboplfbrettd7655fr4n2y
@@ -44,6 +43,7 @@ dependencies:
 
 devDependencies:
   '@types/node': 18.0.0
+  '@types/node-rsa': 1.1.1
   '@types/react': 18.0.14
   '@types/react-dom': 18.0.5
   '@typescript-eslint/eslint-plugin': 5.38.0_kpaatme6gjkpxppst52s4fd23a
@@ -317,10 +317,11 @@ packages:
     resolution: {integrity: sha512-itzxtaBgk4OMbrCawVCvas934waMZWjW17v7EYgFVlfYS/cl0/P7KZdojWCq9SDJMI5cnLQLUP8ayhVCTY8TEg==}
     dependencies:
       '@types/node': 18.0.0
-    dev: false
+    dev: true
 
   /@types/node/18.0.0:
     resolution: {integrity: sha512-cHlGmko4gWLVI27cGJntjs/Sj8th9aYwplmZFwmmgYQQvL5NUsgVJG7OddLvNfLqYS31KFN0s3qlaD9qCaxACA==}
+    dev: true
 
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
