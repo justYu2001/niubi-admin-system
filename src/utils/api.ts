@@ -1,4 +1,5 @@
 import axios, { CreateAxiosDefaults } from "axios";
+import { ungzip } from "pako";
 
 import { env } from "@/env/server.mjs";
 
@@ -36,9 +37,25 @@ const convertKeysToCamelCase = (data: Record<string, unknown>) => {
 };
 
 api.interceptors.response.use((response) => {
-    const isJsonData = response.headers["content-type"] === "application/json";
-    
-    if (response.data && isJsonData) {
+    /*
+     * Fly.io compresses the response data to Gzip format automatically,
+     * and we are unable to control this behavior.
+     * Therefore, the data must be decompressed before being used.
+     */
+
+    const isFromFlyio = "fly-request-id" in response.headers;
+    const isJSONData = response.headers["content-type"] === "application/json";
+
+    if (isFromFlyio && isJSONData) {
+        const unzipedData = ungzip(response.data);
+        const jsonString = new TextDecoder().decode(unzipedData);
+        response.data = JSON.parse(jsonString);
+    } else if (isJSONData) {
+        const dataBuffer = <Buffer>response.data;
+        response.data = JSON.parse(dataBuffer.toString());
+    }
+
+    if (typeof response.data === "object") {
         convertKeysToCamelCase(response.data);
     }
 
