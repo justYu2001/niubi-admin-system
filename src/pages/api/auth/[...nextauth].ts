@@ -110,15 +110,10 @@ const fetchSignInAPI: FetchSignInAPIFunction = async (data) => {
      * Since we need to handle 4XX and 5XX errors ourselves, for the client-side error message.
      * We set validStatus to ensure that status codes under 500 will not be Promise.reject() by Axios,
      * so that we can throw the custom error message.
-     *
-     * Fly.io compresses the response data to Gzip format automatically,
-     * and we are unable to control this behavior.
-     * Therefore, we need to set the option "responseType" to "arraybuffer".
      */
 
     const config: AxiosRequestConfig<SignInAPIRequestBody> = {
         data,
-        responseType: "arraybuffer",
         validateStatus(status) {
             return status < 500;
         },
