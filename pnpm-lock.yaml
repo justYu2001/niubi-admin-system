@@ -11,7 +11,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.33.0
   '@typescript-eslint/parser': ^5.33.0
   autoprefixer: ^10.4.11
-  axios: ^1.2.0
+  axios: ^1.2.1
   eslint: 8.22.0
   eslint-config-next: 12.2.5
   eslint-config-prettier: ^8.5.0
@@ -33,7 +33,7 @@ specifiers:
 dependencies:
   '@headlessui/react': 1.7.2_biqbaboplfbrettd7655fr4n2y
   '@tanstack/react-query': 4.19.0_biqbaboplfbrettd7655fr4n2y
-  axios: 1.2.0
+  axios: 1.2.1
   jsencrypt: 3.3.1
   next: 12.2.5_biqbaboplfbrettd7655fr4n2y
   next-auth: 4.17.0_3xcjr4wz26biff45sz3jtokgje
@@ -628,8 +628,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /axios/1.2.0:
-    resolution: {integrity: sha512-zT7wZyNYu3N5Bu0wuZ6QccIf93Qk1eV8LOewxgjOZFd2DenOs98cJ7+Y6703d0wkaXGY6/nZd4EweJaHz9uzQw==}
+  /axios/1.2.1:
+    resolution: {integrity: sha512-I88cFiGu9ryt/tfVEi4kX2SITsvDddTajXTOFmt2uK1ZVA8LytjtdeyefdQWEf5PU8w+4SSJDoYnggflB5tW4A==}
     dependencies:
       follow-redirects: 1.15.2
       form-data: 4.0.0
