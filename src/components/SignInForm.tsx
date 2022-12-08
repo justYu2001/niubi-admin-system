@@ -1,4 +1,4 @@
-import { FormEvent } from "react";
+import { FormEvent, HTMLInputTypeAttribute } from "react";
 import { useRouter } from "next/router";
 import { signIn, SignInResponse } from "next-auth/react";
 import { useMutation, type UseMutateFunction } from "@tanstack/react-query";
@@ -50,16 +50,13 @@ const fetchSignInAPI = async ({ email, password }: SignInAPIRequestBody) => {
 export default function LoginForm() {
     const router = useRouter();
 
-    const { mutate, isLoading } = useMutation({
+    const { data, isLoading, mutate } = useMutation({
         mutationFn: fetchSignInAPI,
         onSuccess(data) {
             if (data?.ok) {
                 router.push("/");
-            } else if (data?.error) {
-                router.push(`/signin?error=${data.error}`);
             }
         },
-        onError: () => router.push("/signin?error=${無法登入，請稍後再試}"),
     });
 
     return (
@@ -71,7 +68,7 @@ export default function LoginForm() {
         >
             <Input id="email" filedName="電子郵件地址" />
             <Input id="password" filedName="密碼" />
-            <p className="my-1 h-4 text-red-500">{router.query.error}</p>
+            <p className="my-1 h-4 text-red-500">{data?.error}</p>
             <button
                 type="submit"
                 disabled={isLoading}
@@ -86,15 +83,16 @@ export default function LoginForm() {
 interface InputProps {
     id: string;
     filedName: string;
+    type?: HTMLInputTypeAttribute;
 }
 
-const Input = ({ id, filedName }: InputProps) => {
+const Input = ({ id, filedName, type = "text" }: InputProps) => {
     return (
         <div className="my-2 flex flex-col-reverse">
             <input
                 id={id}
                 name={id}
-                type="text"
+                type={type}
                 className="peer w-full rounded border-2 border-gray-300 px-3 py-2 text-lg outline-none transition-all duration-300 focus:border-sky-400"
             />
             <label
