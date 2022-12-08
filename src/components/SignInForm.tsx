@@ -1,4 +1,4 @@
-import { FormEvent, HTMLInputTypeAttribute } from "react";
+import { FormEvent } from "react";
 import { useRouter } from "next/router";
 import { signIn, SignInResponse } from "next-auth/react";
 import { useMutation, type UseMutateFunction } from "@tanstack/react-query";
@@ -71,7 +71,7 @@ export default function LoginForm() {
             <p className="my-1 h-4 text-red-500">{data?.error}</p>
             <button
                 type="submit"
-                disabled={isLoading}
+                disabled={isLoading || data?.ok}
                 className="my-4 w-full rounded bg-sky-400 py-2 font-medium tracking-wide text-white disabled:bg-sky-200"
             >
                 登入
@@ -83,16 +83,15 @@ export default function LoginForm() {
 interface InputProps {
     id: string;
     filedName: string;
-    type?: HTMLInputTypeAttribute;
 }
 
-const Input = ({ id, filedName, type = "text" }: InputProps) => {
+const Input = ({ id, filedName }: InputProps) => {
     return (
         <div className="my-2 flex flex-col-reverse">
             <input
                 id={id}
                 name={id}
-                type={type}
+                type="text"
                 className="peer w-full rounded border-2 border-gray-300 px-3 py-2 text-lg outline-none transition-all duration-300 focus:border-sky-400"
             />
             <label
